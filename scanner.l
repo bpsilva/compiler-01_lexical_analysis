@@ -9,7 +9,7 @@ int lineNumber;
 int running = TRUE;
 %}
 
-
+%x COMMENT
 
 %%
 
@@ -45,6 +45,13 @@ TRUE		{return LIT_TRUE;}
 "'"."'" 	{return LIT_CHAR;}
 ["].*["]	{return LIT_STRING;}
 " "
+
+"//".*
+"/*"		BEGIN(COMMENT);
+<COMMENT>\n	{lineNumber++;}
+<COMMENT>.	
+<COMMENT>"*/"	BEGIN(INITIAL);
+
 [0-9]+[A-Za-z_]+[A-Za-z_0-9]*		{return TOKEN_ERROR;}
 . {return TOKEN_ERROR;}
 
