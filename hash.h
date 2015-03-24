@@ -1,4 +1,4 @@
-#define TAM 997
+#define TAM 20
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>

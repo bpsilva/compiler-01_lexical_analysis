@@ -16,11 +16,12 @@ hash_node* pointer;
 int i = 0;
 	for(i = 0 ; i < TAM ; i++)
 	{
-		for(pointer = table[i]; pointer !=0 ; pointer = pointer->prox)
+		printf("%i: ", i);
+		for(pointer = table[i]; pointer !=0 ; pointer = (struct hash*)pointer->prox)
 		{
 			printf("%s ", pointer->word);
 		}
-		printf("        ");
+		printf("\n");
 	}
 
 
@@ -29,26 +30,21 @@ int i = 0;
 
 void insert(char* text, int type){
 	int address = genAddress(text);
-	hash_node *pointer = table[address], *aux = table[address];
+	struct hash *pointer = table[address], *aux = table[address];
 	int achou = 0;
 
 	
-	while(pointer!=0)
+	for(;pointer!=0; aux = pointer,	pointer= (struct hash*)pointer->prox)
 	{
 		if(!strcmp(text, pointer->word))
-		{
-			
-			achou = 1;
-			
-		}
-	aux = pointer;
-	pointer=pointer->prox;
+		{achou = 1;}
 	}
 	
 	if(achou == 0)
 	{
-		hash_node *node = (hash_node*)malloc(sizeof(hash_node));
-		node->word = text;
+		struct hash *node = (struct hash*)malloc(sizeof(struct hash));
+		node->word = (char *)calloc(1, sizeof(text));
+		strcpy(node->word, text);
 		node->prox = 0;
 		node->type = type;
 		
@@ -59,7 +55,6 @@ void insert(char* text, int type){
 		else{
 			table[address] = node;
 			}
-			
 	}
 	
 

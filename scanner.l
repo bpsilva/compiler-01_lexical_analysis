@@ -40,7 +40,7 @@ output				{return KW_OUTPUT;}
 [0-9]+ 				{return LIT_INTEGER;}
 FALSE				{return LIT_FALSE;}
 TRUE				{return LIT_TRUE;}
-[A-Za-z_][A-Za-z_0-9]*		{return TK_IDENTIFIER;}
+[A-Za-z_][A-Za-z_0-9]*		{insert(yytext, 1);return TK_IDENTIFIER;}
 "'"."'" 			{return LIT_CHAR;}
 ["].*["]			{return LIT_STRING;}
 " "
@@ -63,7 +63,7 @@ int i = 0;
 		printf("%i\n", tok);
 		
 	}
-	printf("\n\n\n%i\n", lineNumber);
+	print();
 	return 0;
 }
 
