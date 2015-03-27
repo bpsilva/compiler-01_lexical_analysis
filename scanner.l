@@ -1,4 +1,6 @@
 %{
+// Bruno Pinto Silva Cartão: 217446 bpsilva
+
 
 #define TRUE 1
 #define FALSE 0
@@ -40,9 +42,9 @@ output				{return KW_OUTPUT;}
 [0-9]+ 				{return LIT_INTEGER;}
 FALSE				{return LIT_FALSE;}
 TRUE				{return LIT_TRUE;}
-[A-Za-z_][A-Za-z_0-9]*		{insert(yytext, 1);return TK_IDENTIFIER;}
-"'"."'" 			{return LIT_CHAR;}
-["].*["]			{return LIT_STRING;}
+[A-Za-z_][A-Za-z_0-9]*		{insert(yytext, TK_IDENTIFIER);return TK_IDENTIFIER;}
+"'"."'" 			{insert(yytext, LIT_CHAR);return LIT_CHAR;}
+["].*["]			{insert(yytext, LIT_STRING);return LIT_STRING;}
 " "
 "//".*
 "/*"				BEGIN(COMMENT);
@@ -53,19 +55,8 @@ TRUE				{return LIT_TRUE;}
 . 				{return TOKEN_ERROR;}
 
 %%
-int main()
-{
-int tok;	
-int i = 0;
-	while(isRunning())
-	{	
-		tok = yylex();
-		printf("%i\n", tok);
-		
-	}
-	print();
-	return 0;
-}
+
+
 
 int isRunning(){ return running;}
 int getLineNumber(){return lineNumber;}

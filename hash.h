@@ -1,11 +1,12 @@
-#define TAM 20
+// Bruno Pinto Silva Cartão: 217446 bpsilva
+#define TAM 997
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
 
 typedef struct hash
 {
-struct hash_node *prox;
+struct hash *prox;
 char* word;
 int type;
 }hash_node;
@@ -14,7 +15,7 @@ hash_node *table[TAM];
 
 void print();
 void insert(char* text, int type);
-void init();
+void initMe();
 int genAddress();
 
 

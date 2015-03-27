@@ -1,7 +1,10 @@
+// Bruno Pinto Silva Cartão: 217446 bpsilva
+
+
 #include "hash.h"
 
 
-void init()
+void initMe()
 {
 	int i;
 		for(i = 0 ; i < TAM ; i++)

@@ -1,12 +1,14 @@
+// Bruno Pinto Silva Cartão: 217446 bpsilva
+
 #include "hash.h"
 #define FAIL "---FAILED---"
 #define PASS "***PASSED***"
 
-char* initTest()
+char* initMeTest()
 {
 int i = 0;
 
-	init();
+	initMe();
 	for(i = 0 ; i < TAM ; i++)
 	{
 		if(table[i]!= 0)
@@ -25,7 +27,7 @@ char* insertTestSimple()
 	int hashPosition = genAddress(palavraTeste);
 	hash_node* pointer;
 
-	init();
+	initMe();
 	insert(palavraTeste, 0);
 
 	for(pointer = table[hashPosition] ;pointer != 0 ; pointer = pointer->prox)
@@ -44,7 +46,7 @@ char* palavraTeste = "palavrateste2";
 int hashPosition = genAddress(palavraTeste);
 
 int counter = 0, i = 0;
-init();
+initMe();
 hash_node* pointer = table[0];
 insert(palavraTeste, 0);
 insert(palavraTeste, 0);
@@ -75,7 +77,7 @@ char* insertTwoWordsTest()
 	int hashPosition2 = genAddress(palavraTeste2);
 	
 	int  i = 0;
-	init();
+	initMe();
 	insert(palavraTeste1, 0);
 	insert(palavraTeste2, 0);
 	hash_node* pointer1 = table[hashPosition1];
@@ -108,9 +110,9 @@ char* genAddressTest()
 
 int main()
 {
-	printf("initTeste: %s\n", initTest());
-	printf("genPositionTest: %s\n", genAddressTest());
-	printf("insertTestSimple: %s\n", insertTestSimple());
-	printf("insertTestEqualWords: %s\n", insertTestEqualWords());
-	printf("insertTwoWordsTest: %s\n", insertTwoWordsTest());
+	printf("initMe Test: \t\t\t\t\t\t%s\n", initMeTest());
+	printf("Address Generation Test: \t\t\t\t%s\n", genAddressTest());
+	printf("Insertion Test (Simpĺe): \t\t\t\t%s\n", insertTestSimple());
+	printf("Insertion Test (Two equal words): \t\t\t%s\n", insertTestEqualWords());
+	printf("Insertion Test (Two diferent words, same address): \t%s\n", insertTwoWordsTest());
 }

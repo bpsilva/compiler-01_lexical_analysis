@@ -1,5 +1,19 @@
-byte int
-var a int
-/*comentárioaoai
-asdasdad*/
-fim
+if (FALSE=TRUE) then TRUE=FALSE
+// cp,emt
+//commennt
+//     asojdasd
+
+/*
+
+if (FALSE=TRUE) then TRUE=FALSE
+// cp,emt
+//commennt
+//     asojdasd
+
+
+
+*/
+
+var
+char
+num bruno
