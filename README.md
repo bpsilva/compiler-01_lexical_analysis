@@ -5,7 +5,8 @@ After that you just need to run the Makefile:
  **make**
 
 And then execute it feeding a file containing the code to be analysed:  
- **./etapa1 < example**
+ **./etapa1 < example1**
+ **./etapa1 < example2**
 
 The result will be a list of all tokens found in the file provided or an error in case of lexical problems in it.
 
