@@ -14,5 +14,5 @@ Besides that, a hash table containing all the valid literals and symbols is prov
 
 ==================================================
 
-To better understand what is the lexical definition accepted, please take a look in the description (in portuguese):
+To better understand what is the lexical definition accepted, please take a look in the work description (in portuguese):
 [Work description](https://bitbucket.org/bpsilva/compiler-01_lexical_analysis/src/f12e26addcca1d1ac8894d7026391534afafd571/definicao.pdf?at=master&fileviewer=file-view-default)
