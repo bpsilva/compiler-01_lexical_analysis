@@ -46,6 +46,7 @@ TRUE				{return LIT_TRUE;}
 "'"."'" 			{insert(yytext, LIT_CHAR);return LIT_CHAR;}
 ["].*["]			{insert(yytext, LIT_STRING);return LIT_STRING;}
 " "
+"\t"				
 "//".*
 "/*"				BEGIN(COMMENT);
 <COMMENT>\n			{lineNumber++;}
