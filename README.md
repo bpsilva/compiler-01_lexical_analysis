@@ -14,7 +14,7 @@ And then execute it feeding a file containing the code to be analysed:
 
 The result will be a list of all tokens found in the file provided or an error in case of lexical problems.
 
-Besides that, a hash table containing all the valid literals and symbols is provided.
+Besides that, a hash table containing all the valid literals and symbols is created.
 
 
 ==================================================
